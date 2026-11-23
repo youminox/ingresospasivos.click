@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "vender-productos-fuxion",
+    "name": "Vender Productos FuXion",
+    "icon": "cup",
+    "isTransactional": true,
+    "description": "Rentabilidad, puntos PV, ciclo de recompra de 28 días y estrategias de venta sin stock para cada bebida y línea oficial de FuXion."
+  },
+  {
+    "slug": "afiliarse-a-fuxion-por-pais",
+    "name": "Afiliarse a FuXion por País",
+    "icon": "globe",
+    "isTransactional": true,
+    "description": "Guías paso a paso para registrarse como distribuidor independiente, cobrar comisiones e impuestos locales en los 34 países de FuXion."
+  },
+  {
+    "slug": "plan-de-pagos-y-bonos-fuxion",
+    "name": "Plan de Pagos, Pro 1 y Pro 2",
+    "icon": "trophy",
+    "isTransactional": true,
+    "description": "Desglose matemático referencial del Plan Pro-Lev: comisiones del 20% al 50%, Bono Pro 1, Pro 2, Pro 3, Bono Familia, Binario y rangos."
+  },
+  {
+    "slug": "dropshipping-y-tienda-virtual-fuxion",
+    "name": "Dropshipping y Tienda Virtual FuXion",
+    "icon": "truck",
+    "isTransactional": true,
+    "description": "Cómo operar tu e-commerce replicado sin comprar inventario: enlaces de Cliente Preferente, pasarelas de pago y despacho internacional."
+  },
+  {
+    "slug": "comparativas-de-negocio-y-afiliacion",
+    "name": "Comparativas de Modelos de Negocio",
+    "icon": "scale",
+    "isTransactional": true,
+    "description": "Análisis comparativos objetivos entre Dropshipping FuXion, e-commerce tradicional con stock, afiliación digital y venta directa vs red."
+  },
+  {
+    "slug": "fundamentos-de-ingresos-pasivos",
+    "name": "Fundamentos de Ingresos Pasivos",
+    "icon": "spark",
+    "isTransactional": false,
+    "description": "Educación financiera sin humo sobre ingresos pasivos, residuales y semipasivos: qué son realmente, cuánto tardan y cómo estructurarlos."
+  },
+  {
+    "slug": "ingresos-extra-por-perfil-y-profesion",
+    "name": "Ingresos Extra por Perfil y Profesión",
+    "icon": "users",
+    "isTransactional": false,
+    "description": "Rutas realistas para generar ingresos adicionales según tu ocupación, horario disponible y habilidades digitales."
+  },
+  {
+    "slug": "guia-dropshipping-sin-inventario",
+    "name": "Guía de Dropshipping Sin Inventario",
+    "icon": "box",
+    "isTransactional": false,
+    "description": "Principios técnicos del comercio electrónico sin almacén propio: logística de última milla, márgenes netos, pasarelas y retención."
+  },
+  {
+    "slug": "marketing-de-afiliados-y-comisiones",
+    "name": "Marketing de Afiliados y Comisiones",
+    "icon": "link",
+    "isTransactional": false,
+    "description": "Estrategias éticas de afiliación, comisiones recurrentes vs pago único, atribución de clientes y embudos de contenido orgánico."
+  },
+  {
+    "slug": "redes-de-mercadeo-eticas-y-modernas",
+    "name": "Redes de Mercadeo Éticas y Modernas",
+    "icon": "network",
+    "isTransactional": false,
+    "description": "Cómo distinguir un multinivel legítimo de esquemas ilegales, prospección digital por atracción sin presionar amigos y duplicación."
+  },
+  {
+    "slug": "ventas-por-whatsapp-y-redes-sociales",
+    "name": "Ventas por WhatsApp y Redes Sociales",
+    "icon": "chat",
+    "isTransactional": false,
+    "description": "Venta consultiva en WhatsApp Business, Instagram, TikTok y YouTube: guiones sin spam, seguimiento de 28 días y cierre ético."
+  },
+  {
+    "slug": "negocios-de-salud-bienestar-y-recompra",
+    "name": "Negocios de Bienestar y Recompra",
+    "icon": "leaf",
+    "isTransactional": false,
+    "description": "Por qué los consumibles saludables Clean Label de uso diario superan en valor de vida del cliente (LTV) a los productos de compra única."
+  },
+  {
+    "slug": "emprender-por-presupuesto-tiempo-y-pais",
+    "name": "Emprender por Tiempo, Capital y País",
+    "icon": "clock",
+    "isTransactional": false,
+    "description": "Guías prácticas según horas libres al día, presupuesto inicial reducido y normativas tributarias en Latinoamérica, EE. UU. y Europa."
+  },
+  {
+    "slug": "inteligencia-artificial-para-vendedores",
+    "name": "IA Aplicada a Ventas y Productividad",
+    "icon": "cpu",
+    "isTransactional": false,
+    "description": "Cómo aprovechar asistentes de inteligencia artificial para organizar prospectos, planificar contenido y escalar atención comercial."
+  },
+  {
+    "slug": "finanzas-para-comisionistas-y-emprendedores",
+    "name": "Finanzas para Comisionistas",
+    "icon": "chart",
+    "isTransactional": false,
+    "description": "Gestión inteligente de ingresos variables por comisiones, control de flujo de caja, fondo de reserva, reinversión y metas."
+  }
+]
