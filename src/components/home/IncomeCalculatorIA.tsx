@@ -117,7 +117,7 @@ export default function IncomeCalculatorIA() {
     <section id="calculadora-ia" className="wrap py-24">
       <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
         <div className="max-w-2xl">
-          <span className="eyebrow">Simulador Interactivo con IA + Supabase</span>
+          <span className="eyebrow">Simulador Interactivo con Inteligencia Artificial</span>
           <h2 className="section-title mt-3">
             Calcula tus ingresos{" "}
             <span className="text-fxblue">referenciales en {country.currency}</span>
@@ -487,7 +487,7 @@ export default function IncomeCalculatorIA() {
               htmlFor="ai-goal"
               className="block text-xs font-extrabold uppercase tracking-wider text-fxbluedeep"
             >
-              🤖 Cuéntale tu objetivo a nuestra IA (conectada a Supabase)
+              🤖 Cuéntale tu objetivo a nuestra IA
             </label>
             <input
               id="ai-goal"
