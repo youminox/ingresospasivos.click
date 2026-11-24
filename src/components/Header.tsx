@@ -30,17 +30,17 @@ export default function Header({
           : "border-b border-[var(--line)] bg-white/92 text-fxink shadow-[0_8px_30px_-22px_rgba(7,19,29,0.35)] backdrop-blur-xl"
       }`}
     >
-      <div className="wrap flex h-[68px] items-center justify-between gap-3">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-fxblue to-fxlime font-display text-lg font-black text-white shadow-md">
+      <div className="wrap flex h-[64px] sm:h-[68px] items-center justify-between gap-2">
+        <Link href="/" className="flex min-w-0 items-center gap-2">
+          <span className="grid h-8 w-8 sm:h-9 sm:w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-fxblue to-fxlime font-display text-base sm:text-lg font-black text-white shadow-md">
             IP
           </span>
-          <span className="leading-none">
-            <span className="block font-display text-lg font-extrabold tracking-tight">
+          <span className="min-w-0 leading-none">
+            <span className="block truncate font-display text-[15px] sm:text-lg font-extrabold tracking-tight">
               IngresosPasivos<span className="text-fxlime">.click</span>
             </span>
             <span
-              className={`block text-[10px] font-semibold uppercase tracking-wider ${
+              className={`block truncate text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider ${
                 dark ? "text-white/65" : "text-[var(--muted)]"
               }`}
             >
@@ -85,21 +85,21 @@ export default function Header({
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex shrink-0 items-center gap-2">
           <div className="hidden sm:block">
             <CountrySelector variant={dark ? "dark" : "light"} compact />
           </div>
           <EnrollLink
             source="header"
-            className="btn btn-lime shine !px-4 !py-2 text-xs sm:!px-5 sm:!py-2.5 sm:text-sm"
+            className="btn btn-lime shine !px-3 !py-1.5 text-xs sm:!px-3.5 sm:!py-2"
           >
-            Registrarme en FuXion
+            Registro
           </EnrollLink>
           <button
             type="button"
             aria-label="Abrir menú"
             onClick={() => setOpenMenu((v) => !v)}
-            className={`grid h-9 w-9 place-items-center rounded-xl border xl:hidden ${
+            className={`grid h-8 w-8 sm:h-9 sm:w-9 shrink-0 place-items-center rounded-xl border xl:hidden ${
               dark
                 ? "border-white/20 text-white"
                 : "border-[var(--line)] text-fxink"
