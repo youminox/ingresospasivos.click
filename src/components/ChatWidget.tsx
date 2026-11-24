@@ -63,6 +63,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [compactMobile, setCompactMobile] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
 
   const persist = useCallback(
@@ -201,6 +202,13 @@ export default function ChatWidget() {
   }, [sendMessage]);
 
   useEffect(() => {
+    const onScroll = () => setCompactMobile(window.scrollY > 550);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       setTimeout(
         () => endRef.current?.scrollIntoView({ behavior: "smooth" }),
@@ -217,7 +225,11 @@ export default function ChatWidget() {
   if (!isEnabled) return null;
 
   return (
-    <div className="fixed bottom-20 right-4 z-50 md:bottom-5 md:right-6">
+    <div
+      className={`fixed z-50 transition-all duration-300 md:bottom-5 md:right-6 ${
+        compactMobile && !isOpen ? "bottom-[82px] right-3.5" : "bottom-5 right-4"
+      }`}
+    >
       {!isOpen && showTeaser && (
         <div className="mb-3 hidden max-w-[285px] rounded-2xl border border-[var(--line)] bg-white p-3.5 text-xs shadow-2xl sm:block">
           <div className="flex items-start justify-between gap-2">
@@ -243,17 +255,27 @@ export default function ChatWidget() {
       {!isOpen ? (
         <button
           type="button"
+          aria-label="Abrir Chat Asesor IA"
           onClick={() => {
             setIsOpen(true);
             setShowTeaser(false);
           }}
-          className="flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#062a44] via-fxblue to-[#007cbc] px-5 py-3.5 font-display text-sm font-extrabold text-white shadow-[0_18px_38px_-12px_rgba(0,147,221,0.85)] transition hover:scale-[1.03]"
+          className={`flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#062a44] via-fxblue to-[#007cbc] font-display text-sm font-extrabold text-white shadow-[0_18px_38px_-12px_rgba(0,147,221,0.85)] transition-all hover:scale-[1.03] md:h-auto md:w-auto md:px-5 md:py-3.5 ${
+            compactMobile ? "h-12 w-12 p-0" : "px-4 py-3 sm:px-5 sm:py-3.5"
+          }`}
         >
-          <span className="relative flex h-2.5 w-2.5">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-fxlime opacity-80" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-fxlime" />
           </span>
-          <span>Chat Asesor IA</span>
+          <span className={compactMobile ? "hidden md:inline" : "inline"}>
+            Chat Asesor IA
+          </span>
+          {compactMobile && (
+            <span className="text-base leading-none md:hidden" aria-hidden>
+              💬
+            </span>
+          )}
         </button>
       ) : (
         <div className="flex h-[min(80svh,630px)] w-[min(92vw,410px)] flex-col overflow-hidden rounded-3xl border border-[var(--line)] bg-white shadow-[0_30px_70px_-20px_rgba(7,19,29,0.65)]">
