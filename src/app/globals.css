@@ -465,6 +465,56 @@ html.lenis body {
     cursor: grab;
   }
 
+  /* Selector interactivo con efecto "Haz clic aquí" + onda táctil */
+  .choice-idle {
+    position: relative;
+    animation: choice-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes choice-pulse {
+    0%, 100% {
+      border-color: rgba(0, 147, 221, 0.38);
+      box-shadow: 0 10px 26px -18px rgba(0, 147, 221, 0.35);
+    }
+    50% {
+      border-color: rgba(140, 198, 63, 0.85);
+      box-shadow: 0 14px 32px -14px rgba(140, 198, 63, 0.55), 0 0 0 3px rgba(140, 198, 63, 0.16);
+    }
+  }
+  .tap-cue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    position: relative;
+  }
+  .tap-finger {
+    display: inline-block;
+    animation: tap-press 1.5s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+  @keyframes tap-press {
+    0%, 100% { transform: translateY(0) scale(1); }
+    45% { transform: translateY(2px) scale(0.9); }
+    65% { transform: translateY(-2px) scale(1.08); }
+  }
+  .tap-ring {
+    position: relative;
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+  }
+  .tap-ring::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+    animation: ring-wave 1.5s ease-out infinite;
+  }
+  @keyframes ring-wave {
+    0% { transform: scale(0.5); opacity: 0.95; }
+    100% { transform: scale(2.1); opacity: 0; }
+  }
+
   .prose-fx { font-size: 1.06rem; color: #1f3340; }
   .prose-fx h2 {
     font-size: clamp(1.45rem, 2.6vw, 1.9rem);

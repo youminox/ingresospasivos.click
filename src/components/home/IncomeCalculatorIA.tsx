@@ -132,30 +132,134 @@ export default function IncomeCalculatorIA() {
         <CountrySelector variant="light" />
       </div>
 
-      {/* Mode Switcher */}
-      <div className="mb-8 inline-flex flex-wrap gap-2 rounded-2xl border border-[var(--line)] bg-fxsky/70 p-1.5">
-        <button
-          type="button"
-          onClick={() => setTab("sales")}
-          className={`rounded-xl px-4 py-2.5 font-display text-sm font-extrabold transition ${
-            tab === "sales"
-              ? "bg-fxblue text-white shadow-md"
-              : "text-fxink hover:bg-white"
-          }`}
+      {/* Mode Switcher con efecto interactivo "Haz clic para elegir" */}
+      <div className="mb-8 rounded-3xl border border-fxblue/20 bg-fxsky/75 p-4 sm:p-5">
+        <div className="mb-3 flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-fxbluedeep">
+          <span className="tap-finger text-base" aria-hidden>
+            👆
+          </span>
+          <span>Haz clic en una opción para cambiar el cálculo:</span>
+        </div>
+
+        <div
+          role="radiogroup"
+          aria-label="Seleccionar modalidad de ingresos FuXion"
+          className="grid gap-3.5 md:grid-cols-2"
         >
-          🥤 Tipo 1: Solo Venta de Productos (Dropshipping)
-        </button>
-        <button
-          type="button"
-          onClick={() => setTab("hybrid")}
-          className={`rounded-xl px-4 py-2.5 font-display text-sm font-extrabold transition ${
-            tab === "hybrid"
-              ? "bg-[#07131d] text-fxlime shadow-md"
-              : "text-fxink hover:bg-white"
-          }`}
-        >
-          🚀 Tipo 2: Ventas + Red Multinivel (Pro 1 · Pro 2 · Equipo)
-        </button>
+          {/* Opción 1: Solo Venta de Productos */}
+          <button
+            type="button"
+            role="radio"
+            aria-checked={tab === "sales"}
+            onClick={() => setTab("sales")}
+            className={`group relative flex w-full items-center justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all duration-200 active:scale-[0.985] sm:p-5 ${
+              tab === "sales"
+                ? "shine border-fxblue bg-gradient-to-r from-fxblue to-fxbluedeep text-white shadow-[0_18px_36px_-14px_rgba(0,147,221,0.8)]"
+                : "choice-idle bg-white text-fxink hover:-translate-y-0.5 hover:bg-white"
+            }`}
+          >
+            <div className="flex items-start gap-3.5">
+              {/* Radio Circle */}
+              <span
+                className={`mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 transition ${
+                  tab === "sales"
+                    ? "border-white bg-white text-fxblue"
+                    : "border-fxblue/50 bg-fxsky text-transparent group-hover:border-fxblue"
+                }`}
+                aria-hidden
+              >
+                <span className="text-xs font-black">✓</span>
+              </span>
+              <div>
+                <span className="block font-display text-base font-extrabold leading-snug sm:text-lg">
+                  🥤 Tipo 1: Solo Venta de Productos
+                </span>
+                <span
+                  className={`mt-0.5 block text-xs font-medium ${
+                    tab === "sales" ? "text-white/85" : "text-[var(--muted)]"
+                  }`}
+                >
+                  Dropshipping sin stock · Bono Pro 1
+                </span>
+              </div>
+            </div>
+
+            {tab === "sales" ? (
+              <span className="shrink-0 rounded-full bg-white/20 px-3 py-1 font-display text-[11px] font-extrabold uppercase tracking-wide text-white">
+                ✓ Activo
+              </span>
+            ) : (
+              <span className="tap-cue shrink-0 rounded-full border border-fxblue/30 bg-fxsky px-3 py-1.5 font-display text-xs font-extrabold text-fxbluedeep shadow-sm group-hover:bg-fxblue group-hover:text-white">
+                <span className="tap-ring text-fxblue group-hover:text-white" aria-hidden>
+                  <span className="h-2.5 w-2.5 rounded-full bg-current" />
+                </span>
+                <span className="tap-finger" aria-hidden>
+                  👆
+                </span>
+                <span>Haz clic</span>
+              </span>
+            )}
+          </button>
+
+          {/* Opción 2: Ventas + Red Multinivel */}
+          <button
+            type="button"
+            role="radio"
+            aria-checked={tab === "hybrid"}
+            onClick={() => setTab("hybrid")}
+            className={`group relative flex w-full items-center justify-between gap-3 rounded-2xl border-2 p-4 text-left transition-all duration-200 active:scale-[0.985] sm:p-5 ${
+              tab === "hybrid"
+                ? "shine border-[#8cc63f] bg-gradient-to-r from-[#07131d] via-[#0c273d] to-[#07131d] text-white shadow-[0_18px_36px_-14px_rgba(7,19,29,0.75)]"
+                : "choice-idle bg-white text-fxink hover:-translate-y-0.5 hover:bg-white"
+            }`}
+          >
+            <div className="flex items-start gap-3.5">
+              {/* Radio Circle */}
+              <span
+                className={`mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 transition ${
+                  tab === "hybrid"
+                    ? "border-fxlime bg-fxlime text-[#1b2d04]"
+                    : "border-fxblue/50 bg-fxsky text-transparent group-hover:border-fxblue"
+                }`}
+                aria-hidden
+              >
+                <span className="text-xs font-black">✓</span>
+              </span>
+              <div>
+                <span
+                  className={`block font-display text-base font-extrabold leading-snug sm:text-lg ${
+                    tab === "hybrid" ? "text-fxlime" : "text-fxink"
+                  }`}
+                >
+                  🚀 Tipo 2: Ventas + Red Multinivel
+                </span>
+                <span
+                  className={`mt-0.5 block text-xs font-medium ${
+                    tab === "hybrid" ? "text-white/80" : "text-[var(--muted)]"
+                  }`}
+                >
+                  Pro 1 · Pro 2 · Comisiones de Equipo
+                </span>
+              </div>
+            </div>
+
+            {tab === "hybrid" ? (
+              <span className="shrink-0 rounded-full bg-fxlime/20 px-3 py-1 font-display text-[11px] font-extrabold uppercase tracking-wide text-fxlime">
+                ✓ Activo
+              </span>
+            ) : (
+              <span className="tap-cue shrink-0 rounded-full border border-fxlime/60 bg-[#f3fce1] px-3 py-1.5 font-display text-xs font-extrabold text-[#2b4c07] shadow-sm group-hover:bg-fxlime group-hover:text-[#1b2d04]">
+                <span className="tap-ring text-[#62961d]" aria-hidden>
+                  <span className="h-2.5 w-2.5 rounded-full bg-current" />
+                </span>
+                <span className="tap-finger" aria-hidden>
+                  👆
+                </span>
+                <span>Haz clic</span>
+              </span>
+            )}
+          </button>
+        </div>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.95fr]">
