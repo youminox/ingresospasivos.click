@@ -20,7 +20,7 @@ import ProductSalesOrbit, {
 import BusinessCounters, {
   type CounterMetric,
 } from "@/components/home/BusinessCounters";
-import DropshippingComparisonSlider from "@/components/home/DropshippingComparisonSlider";
+import LeverageLabSection from "@/components/home/LeverageLabSection";
 import ProfilesCarousel, {
   type ProfileMoment,
 } from "@/components/home/ProfilesCarousel";
@@ -594,32 +594,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 10. Comparador Arrastrable: Con Stock vs Dropshipping FuXion */}
-        <section className="wrap py-24">
-          <div className="mb-10 grid items-end gap-6 lg:grid-cols-[1.2fr_1fr]">
-            <div>
-              <span className="eyebrow" data-reveal>
-                Comparativa Visual Interactiva
-              </span>
-              <SplitHeading
-                text="Arrastra y compara:"
-                accent={{
-                  text: "Stock propio vs Sistema FuXion",
-                  className: "text-fxblue",
-                }}
-                className="section-title mt-3"
-              />
-            </div>
-            <p className="text-[var(--muted)]" data-reveal>
-              Mueve el control deslizante para contrastar el riesgo financiero y
-              operativo de montar un comercio con inventario propio frente a
-              operar la Tienda Virtual de Dropshipping de FuXion.
-            </p>
-          </div>
-          <div data-reveal>
-            <DropshippingComparisonSlider />
-          </div>
-        </section>
+        {/* 10. Laboratorio Interactivo de Apalancamiento FuXion (3 en 1) */}
+        <LeverageLabSection />
 
         {/* 11. Equipo de Personas que nos Ayudan con el Negocio de Afiliación */}
         <section className="bg-fxsky/80 py-24">
