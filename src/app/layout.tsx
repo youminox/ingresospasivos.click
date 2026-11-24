@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { GeoProvider } from "@/lib/countries";
@@ -45,7 +45,28 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  verification: {
+    google: [
+      "google07464c8c60a81e7a",
+      "172C7_Myoxhj0Y7awkbiE22513T05NSfBYUdmPFvxgY",
+    ],
+  },
+  other: {
+    "google-adsense-account": "ca-pub-1070738569472471",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0093DD",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -55,6 +76,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${outfit.variable} ${inter.variable}`}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1070738569472471"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <JsonLd
           data={{
